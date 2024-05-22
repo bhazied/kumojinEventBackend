@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "dgSpecHash": "sUEOidAten+dZAhwntXIsSvG8zbbNiSXQ+QDrdpWA+Zg0m/UErk76g1pXZa/L8CRCwEDNhSED19DVB1FGFp16A==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\zied.benhadjamor\\Desktop\\formation\\Others\\src\\kumojinEvent\\Backend\\Kumojin.Events.Application\\Kumojin.Events.Application.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\zied.benhadjamor\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
+    "C:\\Users\\zied.benhadjamor\\.nuget\\packages\\fluentvalidation\\11.5.1\\fluentvalidation.11.5.1.nupkg.sha512",
+    "C:\\Users\\zied.benhadjamor\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.0\\fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
+    "C:\\Users\\zied.benhadjamor\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.5.1\\fluentvalidation.dependencyinjectionextensions.11.5.1.nupkg.sha512",
+    "C:\\Users\\zied.benhadjamor\\.nuget\\packages\\mediatr\\12.2.0\\mediatr.12.2.0.nupkg.sha512",
+    "C:\\Users\\zied.benhadjamor\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
+    "C:\\Users\\zied.benhadjamor\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\zied.benhadjamor\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
+    "C:\\Users\\zied.benhadjamor\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
+    "C:\\Users\\zied.benhadjamor\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

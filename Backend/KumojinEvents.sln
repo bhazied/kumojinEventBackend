@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kumojin.Events.Api", "Kumojin.Events.Api\Kumojin.Events.Api.csproj", "{D3478C00-6615-442D-BD9D-86BF4827BBFA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kumojin.Events.Application", "Kumojin.Events.Application\Kumojin.Events.Application.csproj", "{F6D88DC0-80B2-4D89-B082-AACEC5EC2F24}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kumojin.Events.Infrastructure", "Kumojin.Events.Infrastructure\Kumojin.Events.Infrastructure.csproj", "{FD4C3822-EA27-4958-A761-EA3F063AA97B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kumojin.Events.Migrator", "Kumojin.Events.Migrator\Kumojin.Events.Migrator.csproj", "{AA8B95EC-7C51-4308-B7C5-8ADECBE64BBD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kumojin.Events.Model", "Kumojin.Events.Model\Kumojin.Events.Model.csproj", "{8239AD13-8172-47D1-BDF7-9E0C6E215C21}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D3478C00-6615-442D-BD9D-86BF4827BBFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3478C00-6615-442D-BD9D-86BF4827BBFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3478C00-6615-442D-BD9D-86BF4827BBFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3478C00-6615-442D-BD9D-86BF4827BBFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6D88DC0-80B2-4D89-B082-AACEC5EC2F24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6D88DC0-80B2-4D89-B082-AACEC5EC2F24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6D88DC0-80B2-4D89-B082-AACEC5EC2F24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6D88DC0-80B2-4D89-B082-AACEC5EC2F24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD4C3822-EA27-4958-A761-EA3F063AA97B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD4C3822-EA27-4958-A761-EA3F063AA97B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD4C3822-EA27-4958-A761-EA3F063AA97B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD4C3822-EA27-4958-A761-EA3F063AA97B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA8B95EC-7C51-4308-B7C5-8ADECBE64BBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA8B95EC-7C51-4308-B7C5-8ADECBE64BBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA8B95EC-7C51-4308-B7C5-8ADECBE64BBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA8B95EC-7C51-4308-B7C5-8ADECBE64BBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8239AD13-8172-47D1-BDF7-9E0C6E215C21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8239AD13-8172-47D1-BDF7-9E0C6E215C21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8239AD13-8172-47D1-BDF7-9E0C6E215C21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8239AD13-8172-47D1-BDF7-9E0C6E215C21}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

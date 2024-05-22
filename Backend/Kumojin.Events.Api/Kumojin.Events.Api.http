@@ -1,0 +1,6 @@
+@Kumojin.Events.Api_HostAddress = http://localhost:5120
+
+GET {{Kumojin.Events.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
