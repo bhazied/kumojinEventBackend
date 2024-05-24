@@ -14,16 +14,17 @@ public class InitializationDb : Migration
 
     public override void Up()
     {
-        if(!Schema.Table("Events").Exists())
+        if(!Schema.Table("events").Exists())
         {
-            Create.Table("Events")
-            .WithColumn("Id").AsGuid().NotNullable().PrimaryKey()
-            .WithColumn("Name").AsString(32).NotNullable().Unique()
-            .WithColumn("Description").AsString(255).NotNullable()
-            .WithColumn("Program").AsString()
-            .WithColumn("Location").AsString()
-            .WithColumn("Start_Date").AsDateTime().NotNullable()
-            .WithColumn("End_Date").AsDateTime().NotNullable();
+            Create.Table("events")
+            .WithColumn("event_id").AsGuid().NotNullable().PrimaryKey()
+            .WithColumn("name").AsString(32).NotNullable().Unique()
+            .WithColumn("description").AsString(255).NotNullable()
+            .WithColumn("program").AsString()
+            .WithColumn("location").AsString()
+            .WithColumn("start_date").AsDateTime().NotNullable()
+            .WithColumn("timezone").AsDateTime().NotNullable()
+            .WithColumn("end_date").AsDateTime().NotNullable();
         }
     }
 }

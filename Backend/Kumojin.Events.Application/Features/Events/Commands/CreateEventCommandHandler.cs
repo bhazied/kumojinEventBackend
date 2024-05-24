@@ -1,22 +1,27 @@
 ﻿using AutoMapper;
 using Kumojin.Events.Application.interfaces;
+using Kumojin.Events.Model.Entities.Event;
 using MediatR;
 
 namespace Kumojin.Events.Application;
 
 public class CreateEventCommandHandler : IRequestHandler<CreateEventCommand, Result<int>>
 {
-    private readonly IDbContext _context;
+    
+    private readonly IEventRepository _repository;
     private readonly IMapper _mapper;
 
-    public CreateEventCommandHandler(IDbContext context, IMapper mapper)
+    public CreateEventCommandHandler(IEventRepository repository, IMapper mapper)
     {
-        _context = context;
+        _repository = repository;
         _mapper = mapper;
     }
 
     public async Task<Result<int>> Handle(CreateEventCommand request, CancellationToken cancellationToken)
     {
-        return await Result<int>.SuccessAsync(1);
+        var @event = _mapper.Map<Event>(request);
+        @event.EventId = Guid.NewGuid().ToString();
+        int result = await _repository.AddAsync(@event);
+        return await Result<int>.SuccessAsync(result);
     }
 }

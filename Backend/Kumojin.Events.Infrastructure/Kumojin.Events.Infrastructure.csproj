@@ -14,8 +14,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Kumojin.Events.Application\Kumojin.Events.Application.csproj" />
     <ProjectReference Include="..\Kumojin.Events.Migrator\Kumojin.Events.Migrator.csproj" />
+    <ProjectReference Include="..\Kumojin.Events.Model\Kumojin.Events.Model.csproj" />
+    <ProjectReference Include="..\Kumojin.Events.Application\Kumojin.Events.Application.csproj" />
   </ItemGroup>
 
 </Project>

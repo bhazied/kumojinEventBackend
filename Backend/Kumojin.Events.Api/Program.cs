@@ -20,17 +20,11 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
-    // using(var scope = app.Services.CreateScope())
-    // {
-        
-    //      var migratorRunner = scope.ServiceProvider.GetRequiredService<IMigrationRunner>();
-    //      migratorRunner.MigrateUp();
-    // }
+
     await app.InitDatabaseAsync();
 }
 
 app.UseHttpsRedirection();
-app.MapWeatherEndPoints();
 app.MapEventEndPoints();
 
 app.Run();

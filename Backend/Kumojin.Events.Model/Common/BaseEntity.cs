@@ -2,5 +2,5 @@
 
 public class BaseEntity : IEntity
 {
-    public virtual Guid Id {get;set;}
+    
 }
