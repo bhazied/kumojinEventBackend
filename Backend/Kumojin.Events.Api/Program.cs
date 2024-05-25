@@ -1,9 +1,8 @@
-using FluentMigrator.Runner;
-
 using Kumojin.Events.Api.EndPoints;
 using Kumojin.Events.Migrator;
 using Kumojin.Events.Application;
 using Kumojin.Events.Infrastructure;
+using Kumojin.Events.Api.Builder.Extensions;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -13,6 +12,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddMigrator(builder.Configuration);
 builder.Services.AddApplication();
 builder.Services.AddInfraStructure();
+builder.Services.AddCorsPolicies();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -23,10 +23,9 @@ if (app.Environment.IsDevelopment())
 
     await app.InitDatabaseAsync();
 }
-
+app.UseCors("EventFrontedPolicy");
 app.UseHttpsRedirection();
 app.MapEventEndPoints();
-
 app.Run();
 
 

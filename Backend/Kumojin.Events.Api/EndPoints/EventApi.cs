@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using Kumojin.Events.Application;
+using Microsoft.AspNetCore.Mvc;
 namespace Kumojin.Events.Api.EndPoints;
 
 public static class EventApi
@@ -13,7 +14,8 @@ public static class EventApi
           .WithDescription("Return All Events From database")
           .WithOpenApi();
 
-        app.MapPost("events", async(IMediator mediator, CreateEventCommand @event) => {
+        app.MapPost("events", async(IMediator mediator, HttpRequest request) => {
+             var @event = await request.ReadFromJsonAsync<CreateEventCommand>();
              Result<int> result = await mediator.Send(@event);
              return Results.Ok(result);
         }).WithName("AddEvent")

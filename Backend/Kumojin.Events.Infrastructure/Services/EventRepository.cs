@@ -16,7 +16,7 @@ public class EventRepository : IEventRepository
         _context = context;
         _connection = _context.CreateConnection();
     }
-    public async Task<int> AddAsync(Event @event)
+    public virtual async Task<int> AddAsync(Event @event)
     {
         int affectedRows = 0;
         try
@@ -24,7 +24,7 @@ public class EventRepository : IEventRepository
         affectedRows = await _connection.ExecuteAsync(Constants.AddNewEvent, @event);
         }catch(Exception ex)
         {
-            
+            return -1;
         }
        return affectedRows;
     }

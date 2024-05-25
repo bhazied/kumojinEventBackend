@@ -1,4 +1,14 @@
 <div class="container">
+  @if(success){
+      <div class="alert alert-success" role="alert">
+        Yes, Event Added
+      </div>
+  }
+  @if(!success && submitted){
+    <div class="alert alert-danger" role="alert">
+      Nop, try again!!
+    </div>
+  }
   <form [formGroup]="eventForm" (ngSubmit)="onSubmit()">
     <div class="row">
       <div class="form-group col-md-6 mb-3">

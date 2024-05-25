@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { NgFor, NgIf, NgClass } from '@angular/common';
+import { Subject, takeUntil } from 'rxjs';
+
 import {
   FormBuilder,
   ReactiveFormsModule,
@@ -12,15 +14,22 @@ import {
 import timezones from '../../data/timezones.json';
 import { EventDto } from '../Common/models/EventDto';
 import { EventService } from '../Common/services/event.service';
+
 @Component({
   selector: 'event-add',
   standalone: true,
+  providers: [EventService],
   imports: [NgFor, NgIf, ReactiveFormsModule, NgClass],
   templateUrl: './add.component.html',
   styleUrl: './add.component.css',
 })
-export class AddComponent implements OnInit {
-  constructor(private formBuilder: FormBuilder, private eventService: EventService) {}
+export class AddComponent implements OnInit, OnDestroy {
+  private destroy$ = new Subject();
+  public success: boolean = false;
+  constructor(
+    private formBuilder: FormBuilder,
+    private service: EventService
+  ) {}
   public timezonesList: { zone: string; utc: string; name: string }[] =
     timezones;
   submitted: boolean = false;
@@ -56,11 +65,27 @@ export class AddComponent implements OnInit {
       return;
     }
     this.event = { ...this.event, ...this.eventForm.value };
+    this.service
+      .AddEvent(this.event)
+      .pipe(takeUntil(this.destroy$))
+      .subscribe(
+        (response) => {
+          this.success = response.succeeded;
+        },
+        (error) => {
+          this.success = false;
+        }
+      );
     console.log(JSON.stringify(this.event, null, 2));
   }
 
   onReset() {
     this.submitted = false;
     this.eventForm.reset();
+  }
+
+  ngOnDestroy(): void {
+    this.destroy$.next(null);
+    this.destroy$.unsubscribe();
   }
 }

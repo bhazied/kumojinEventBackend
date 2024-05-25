@@ -1,12 +1,23 @@
+import { Observable } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+
 import { EventDto } from '../models/EventDto';
 import { environment } from '../../../../../environments/environment';
+
+@Injectable()
 export class EventService {
+  private apiUrl = environment.BASE_URL + 'events';
+  constructor(private http: HttpClient) {}
+  AddEvent(event: EventDto): Observable<any> {
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    return this.http.post(this.apiUrl, event, {headers});
+  }
 
-    AddEvent(event: EventDto) : any{
-        return true;
-    }
-
-    GetAllEvent(): EventDto[]{
-        return [];
-    }
+  GetAllEvent(): Observable<any> {
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+        let data = this.http.get(this.apiUrl, {headers});
+    console.log(data);
+    return data;
+  }
 }

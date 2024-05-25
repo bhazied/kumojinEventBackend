@@ -4,15 +4,23 @@ using MediatR;
 
 namespace Kumojin.Events.Application;
 
-public class CreateEventCommand : IRequest<Result<int>>
+public class CreateEventCommand(
+    string Name, 
+    string Description,
+    string Program,
+    string Location,
+    string TimeZone,
+    DateTime StartDate,
+    DateTime EndDate
+    ) : IRequest<Result<int>>
 {
-    public string Name {get; init;}
-    public string Description {get; init;}
-    public string Program {get; init;}
-    public string Location {get; init;}
-    public string Timezone {get; init;}
-    public DateTime StartDate {get; init;}
-    public DateTime EndDate {get; init;}
+    public string Name {get; init;} = Name;
+    public string Description {get; init;} = Description;
+    public string Program {get; init;} = Program;
+    public string Location {get; init;} = Location;
+    public string Timezone {get; init;} = TimeZone;
+    public DateTime StartDate {get; init;} = StartDate;
+    public DateTime EndDate {get; init;} = EndDate;
 
     private class Mapping: Profile 
     {
