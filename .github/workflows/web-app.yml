@@ -36,7 +36,7 @@ jobs:
       attestations: write
     defaults:
       run:
-         working-directory: ../../Frontend/KumojimEvents
+         working-directory: ./Frontend/KumojimEvents
     steps:
     - name: Build Docker image for web application
       run: docker build . --file Dockerfile --tag kumojin-app:$(date +%s)
@@ -60,7 +60,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-         working-directory: ../deploy
+         working-directory: ./deploy
     steps:
     - name: deploy
       run: docker images
