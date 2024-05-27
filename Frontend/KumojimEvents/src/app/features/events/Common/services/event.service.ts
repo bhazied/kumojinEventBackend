@@ -7,7 +7,7 @@ import { environment } from '../../../../../environments/environment';
 
 @Injectable()
 export class EventService {
-  private apiUrl = environment.BASE_URL + 'events';
+  public apiUrl: string = environment.BASE_URL + 'events';
   constructor(private http: HttpClient) {}
   AddEvent(event: EventDto): Observable<any> {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });

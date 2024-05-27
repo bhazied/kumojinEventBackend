@@ -1,4 +1,11 @@
-import { Component, OnDestroy, OnInit, TemplateRef, ViewChild, inject } from '@angular/core';
+import {
+  Component,
+  OnDestroy,
+  OnInit,
+  TemplateRef,
+  ViewChild,
+  inject,
+} from '@angular/core';
 import { DatePipe } from '@angular/common';
 import { Subject, takeUntil } from 'rxjs';
 import { MtxGrid, MtxGridColumn } from '@ng-matero/extensions/grid';
@@ -26,8 +33,18 @@ export class ListComponent implements OnInit, OnDestroy {
     { header: 'Description', field: 'description', sortable: true },
     { header: 'Location', field: 'location', sortable: true },
     { header: 'Program', field: 'program', sortable: true },
-    { header: 'Start date', field: 'startDate', sortable: true, cellTemplate: this.sdTpl },
-    { header: 'End date', field: 'endDate', sortable: true, cellTemplate: this.edTpl },
+    {
+      header: 'Start date',
+      field: 'startDate',
+      sortable: true,
+      cellTemplate: this.sdTpl,
+    },
+    {
+      header: 'End date',
+      field: 'endDate',
+      sortable: true,
+      cellTemplate: this.edTpl,
+    },
     { header: 'Timezone', field: 'timeZone', sortable: true },
   ];
   ngOnInit(): void {

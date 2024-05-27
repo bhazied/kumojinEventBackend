@@ -11,8 +11,8 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-
+    
     steps:
     - uses: actions/checkout@v4
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag kumojin-app:$(date +%s)
+      run: docker build . --file ./Frontend/Dockerfile --tag kumojin-app:$(date +%s)
