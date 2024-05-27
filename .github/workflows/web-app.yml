@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-         working-directory: ../../Frontend/KumojimEvents
+         working-directory: ./Frontend/KumojimEvents
     strategy:
       matrix:
         node-version: ['20.13.1']
