@@ -10,13 +10,15 @@ on:
 jobs:
 
   build:
-
     runs-on: 
-      - self-hosted
-      - Kumojin-web-app
+    - self-hosted
+    - Kumojin-web-app
+    defaults:
+      run:
+         working-directory: ../Events
     strategy:
       matrix:
-        node-version: ['20']
+        node-version: ['20.13.1']
     steps:
     - uses: actions/checkout@v4
     - name: Use Node.js ${{ matrix.node-version }}
