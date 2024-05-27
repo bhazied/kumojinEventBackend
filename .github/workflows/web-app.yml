@@ -1,29 +1,39 @@
-name: Docker Image CI
+name: test and build web application
 
 on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+  workflow_dispatch:
+  # push:
+  #   branches: [ "main" ]
+  # pull_request:
+  #   branches: [ "main" ]
 
 jobs:
 
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: 
+      - self-hosted
+      - Kumojin-web-app
     strategy:
       matrix:
-        node-version: [20.13.1]
+        node-version: ['20']
     steps:
     - uses: actions/checkout@v4
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
-    - run: npm ci --legacy-peer-deps
-    - name: unit test
-      run: npm run test
+        cache: 'package-lock.json'
+    - run: npm ci
+      working-directory: ../Frontend/kumojimEvents
+    - name: run unit test
+      working-directory: ../Frontend/kumojimEvents
+    - run: npm run test
+      working-directory: ../Frontend/kumojimEvents
     - run: npm run build --if-present
+      working-directory: ../Frontend/kumojimEvents
     - run: npm test
-    - name: Build the Docker image
-      run: docker build . --file ../Frontend/KimojimEvents/Dockerfile --tag kumojin-app:$(date +%s)
+      working-directory: ../Frontend/kumojimEvents
+    - name: Build Docker image for web application
+    - run: docker build . --file Dockerfile --tag kumojin-app:$(date +%s)
+      working-directory: ../Frontend/kumojimEvents
