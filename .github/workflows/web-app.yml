@@ -72,5 +72,3 @@ jobs:
           ingress.yaml
         images: |
           docker.io/bhazied/kumojin-app:latest
-
-  
