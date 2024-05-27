@@ -14,8 +14,8 @@ WORKDIR /dist/src/app
 RUN npm cache clean --force
 # Copy files from local machine to virtual directory in docker image
 COPY . .
-RUN npm install
-RUN npm run build --prod
+RUN npm install --force
+RUN npm run build --prod 
 RUN ls -l /dist/src/app/dist/kumojim-events
 
 ### STAGE 2:RUN ###

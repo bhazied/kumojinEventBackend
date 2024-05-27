@@ -106,15 +106,27 @@
     </div>
 
     <div class="row">
+      
       <div class="form-group col-md-6 mb-3">
         <label for="StartDate">StartDate: </label>
+        <mtx-datetimepicker #datetimePicker
+                      [type]="type"
+                      [mode]="mode"
+                      [multiYearSelector]="multiYearSelector"
+                      [startView]="startView"
+                      [twelvehour]="twelvehour"
+                      [timeInterval]="timeInterval"
+                      [touchUi]="touchUi"
+                      [timeInput]="timeInput"></mtx-datetimepicker>
         <input
           id="StartDate"
           class="form-control"
           type="text"
           formControlName="StartDate"
           [ngClass]="{ 'is-invalid': submitted && f['StartDate'].errors }"
+          [mtxDatetimepicker]="datetimePicker"
         />
+        <mtx-datetimepicker-toggle [for]="datetimePicker" matSuffix></mtx-datetimepicker-toggle>
         @if (submitted && f['StartDate'].errors) {
         <div class="invalid-feedback">
           @if (f['StartDate'].errors['required']) {
@@ -126,13 +138,24 @@
 
       <div class="form-group col-md-6 mb-3">
         <label for="EndDate">EndDate: </label>
+        <mtx-datetimepicker #datetimePicker1
+                      [type]="type"
+                      [mode]="mode"
+                      [multiYearSelector]="multiYearSelector"
+                      [startView]="startView"
+                      [twelvehour]="twelvehour"
+                      [timeInterval]="timeInterval"
+                      [touchUi]="touchUi"
+                      [timeInput]="timeInput"></mtx-datetimepicker>
         <input
           id="EndDate"
           class="form-control"
           type="text"
           formControlName="EndDate"
           [ngClass]="{ 'is-invalid': submitted && f['EndDate'].errors }"
+          [mtxDatetimepicker]="datetimePicker1"
         />
+        <mtx-datetimepicker-toggle [for]="datetimePicker1" matSuffix></mtx-datetimepicker-toggle>
         @if (submitted && f['EndDate'].errors) {
         <div class="invalid-feedback">
           @if (f['EndDate'].errors['required']) {
@@ -142,7 +165,7 @@
         }
       </div>
     </div>
-
+    <section>
     <div class="form-group">
       <button type="submit" class="btn btn-primary">Register</button>
       <button
@@ -153,5 +176,6 @@
         Reset
       </button>
     </div>
+  </section>
   </form>
 </div>

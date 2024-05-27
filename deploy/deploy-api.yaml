@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: deploy-api
+  name: deploy-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: deploy-api
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: deploy-api
+    spec:
+      containers:
+        - image: bhazied/kumojin-api:latest
+          name: kumojin-api
+          imagePullPolicy: Always
+          port: 8181
+          resources: {}
+status: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: api-service
+  name: api-service
+spec:
+  ports:
+    - name: 80-8181
+      port: 80
+      protocol: TCP
+      targetPort: 8181
+  selector:
+    app: deploy-api
+  type: NodePort
+status:
+  loadBalancer: {}

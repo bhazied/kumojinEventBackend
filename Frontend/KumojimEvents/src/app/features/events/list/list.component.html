@@ -1,1 +1,27 @@
-<p>list works!</p>
+<mtx-grid
+  [data]="eventList"
+  [columns]="columns"
+  [expandable]="true"
+  [expansionTemplate]="expansionTpl"
+  (expansionChange)="log($event)"
+  [rowHover]="true"
+  [rowStriped]="true"
+>
+</mtx-grid>
+
+<ng-template #sdTpl let-row let-index="index" let-col="colDef">
+    {{ row.startDate | date : "dd/MM/yyy"  }}
+</ng-template>
+
+<ng-template #edTpl let-row let-index="index" let-col="colDef">
+    {{ row.endDate | date : "dd/MM/yyy"  }}
+</ng-template>
+
+<ng-template #expansionTpl let-row>
+    <div><h2> In my current Time </h2> </div>             
+
+        <div>Start Date :  {{ row.startDate | date : "dd/MM/yyy HH:mm" : row.timeZone }}</div>  / 
+
+        <div>End Date : {{ row.endDate | date : "dd/MM/yyy HH:mm" : row.timeZone }}</div>
+
+</ng-template>
