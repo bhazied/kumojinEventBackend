@@ -20,11 +20,11 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
-        cache: 'npm'
+        cache: '../Frontend/KimojimEvents/package-lock.json'
     - run: npm ci
     - name: unit test
       run: npm run test
     - run: npm run build --if-present
     - run: npm test
     - name: Build the Docker image
-      run: docker build . --file ../Frontend/Dockerfile --tag kumojin-app:$(date +%s)
+      run: docker build . --file ../Frontend/KimojimEvents/Dockerfile --tag kumojin-app:$(date +%s)
