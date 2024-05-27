@@ -10,9 +10,7 @@ on:
 jobs:
 
   build:
-    runs-on: 
-    - self-hosted
-    - Kumojin-web-app
+    runs-on: ubuntu-latest
     defaults:
       run:
          working-directory: ../Frontend/KumojimEvents
