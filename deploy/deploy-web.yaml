@@ -21,7 +21,8 @@ spec:
         - image: bhazied/kumojin-app:latest
           name: kumojin-app
           resources: {}
-          port: 8585
+          ports:
+          - containerPort: 8585
 status: {}
 ---
 apiVersion: v1

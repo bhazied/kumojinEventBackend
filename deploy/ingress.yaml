@@ -7,7 +7,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: kumojin-app.com 
+    - host: kumojin-event.com 
       http:
         paths:
           - path: /ke 
@@ -17,13 +17,9 @@ spec:
                 name: app-service
                 port:
                   number: 80
-    - host: kumojin-api.com
-      http:
-        path:
           - path: /
-          pathType: Prefix
-          backend:
-            service:
-              name: api-service
-              port:
-                number: 80
+            pathType: Prefix
+            backend:
+              service:
+                name: api-service
+                port: 80
