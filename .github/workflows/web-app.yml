@@ -9,26 +9,26 @@ on:
 
 jobs:
 
-  # test:
-  #   runs-on: ubuntu-latest
-  #   defaults:
-  #     run:
-  #        working-directory: ./Frontend/KumojimEvents
-  #   strategy:
-  #     matrix:
-  #       node-version: ['20.13.1']
-  #   steps:
-  #   - uses: actions/checkout@v4
-  #   - name: Use Node.js ${{ matrix.node-version }}
-  #     uses: actions/setup-node@v3
-  #     with:
-  #       node-version: ${{ matrix.node-version }}
-  #   - run: npm ci --force
-  #   - name: run unit test
-  #     run: npm run test
-  #   - run: npm run build --if-present
+  test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+         working-directory: ./Frontend/KumojimEvents
+    strategy:
+      matrix:
+        node-version: ['20.13.1']
+    steps:
+    - uses: actions/checkout@v4
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: npm ci --force
+    - name: run unit test
+      run: npm run test
+    - run: npm run build --if-present
   build:
-    
+    needs: [test]
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -53,7 +53,7 @@ jobs:
         docker push bhazied/kumojin-app:latest
       
   deploy:
-    needs: [ build ]
+    needs: [ test, build ]
     runs-on: ubuntu-latest
     environment: prod
     defaults:
