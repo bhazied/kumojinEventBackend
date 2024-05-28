@@ -90,3 +90,14 @@ Features ==> Event ==> Add : Ajouter un event , contient le component et son tes
 Features ==> Event ==> List : lister les events, contient le component et son test ainsi la template html
 
 Features ==> Event ==> Common: contien le model DTO , le service et les mocks utilisé aux test pour mocker les services si besoin
+
+### Deploiement
+Une seule application est configurer au niveau de GitAction, l'application web.
+le deployement est fait sur minikube sous l'environement git.
+### Horizon
+- Exception Handler pour les validations des commande et aussi pour quelque requêtes.
+- Log http request
+- Entité Event
+- Amélioration d'affichage de la liste des eévennement sous forme d'une calendrier au lieu de liste.
+
+
