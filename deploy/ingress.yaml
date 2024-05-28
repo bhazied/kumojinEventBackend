@@ -22,4 +22,5 @@ spec:
             backend:
               service:
                 name: api-service
-                port: 80
+                port: 
+                  number: 80
