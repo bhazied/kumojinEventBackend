@@ -63,6 +63,6 @@ jobs:
        id: minikube
        uses: medyagh/setup-minikube@latest
      - name: deploy web apo on minikube
-         run: |
+         run:|
            kubectl apply  -f deploy-web.yaml
            kubectl apply -f ingress.yaml
